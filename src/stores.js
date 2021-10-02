@@ -1,11 +1,8 @@
-import { writable } from 'svelte/store';
 import { localStore } from './localStore.js';
 
-export const alert = writable('Welcome to the To-Do list app!');
-
 const initialTodos = [
-	{ id: 1, name: 'Visit MDN web docs', completed: true },
-	{ id: 2, name: 'Complete the Svelte Tutorial', completed: false }
+	{ id: 1, name: 'eat', start: '13:30', end: '14:30', completed: true },
+	{ id: 2, name: 'sleep', start: '16:15', end: '17:15', completed: false }
 ];
 
-export const todos = localStore('mdn-svelte-todo', initialTodos);
+export const todos = localStore('data', initialTodos);
