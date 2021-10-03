@@ -3,7 +3,7 @@
 		{ id: 1, title: 'eat', start: '03:00', end: '04:00' },
 		{ id: 2, title: 'sleep', start: '04:00', end: '05:00' },
 		{ id: 3, title: 'code', start: '06:00', end: '07:00' }
-	];
+	].sort((a, b) => a.start.localeCompare(b.start));
 	let title = '';
 	let start = null;
 	let end = null;
@@ -17,7 +17,7 @@
 				start,
 				end
 			}
-		];
+		].sort((a, b) => a.start.localeCompare(b.start));
 		title = '';
 		start = null;
 		end = null;
@@ -32,8 +32,9 @@
 		console.log(x);
 		x = { ...x, title: e.target.value };
 		console.log(x);
-		items = [...items, x];
+		items = [...items, x].sort((a, b) => a.start.localeCompare(b.start));
 		remove(item);
+		console.log('Change Title Fired!');
 	};
 
 	$: console.log(items);
@@ -51,7 +52,7 @@
 	{#each items as item}
 		<li>
 			<input on:change={(e) => changeTitle(e, item)} value={item.title} />
-
+			<input type="time" value={item.start} />
 			<button on:click={() => remove(item)}>-</button>
 		</li>
 	{/each}
