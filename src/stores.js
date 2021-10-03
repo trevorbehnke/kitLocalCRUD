@@ -1,8 +1,23 @@
-import { localStore } from './localStore.js';
+// import { browser } from '$app/env';
+// import { writable } from 'svelte/store';
 
-const initialTodos = [
-	{ id: 1, name: 'eat', start: '13:30', end: '14:30', completed: true },
-	{ id: 2, name: 'sleep', start: '16:15', end: '17:15', completed: false }
-];
+// const createWritableStore = (key, startValue) => {
+// 	const { subscribe, set } = writable(startValue);
 
-export const todos = localStore('data', initialTodos);
+// 	return {
+// 		subscribe,
+// 		set,
+// 		useLocalStorage: () => {
+// 			const json = localStorage.getItem(key);
+// 			if (json) {
+// 				set(JSON.parse(json));
+// 			}
+
+// 			subscribe((current) => {
+// 				localStorage.setItem(key, JSON.stringify(current));
+// 			});
+// 		}
+// 	};
+// };
+
+// export const count = createWritableStore('count', '');
